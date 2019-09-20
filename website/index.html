@@ -12,20 +12,19 @@
          "use strict";
          function submitForm(oFormElement) {
              var xhr = new XMLHttpRequest();
+             xhr.open("POST", "https://qqkbhu58nl.execute-api.ca-central-1.amazonaws.com/beta", true);
              xhr.onload = function() {
                  var result = parseFloat(xhr.responseText);
-                 var resultElement = document.getElementById('result');
-                 if (result == 0) {
-                     resultElement.className = 'bg-danger';
-                     resultElement.innerHTML = 'Your review was NEGATIVE!';
-                 } else {
-                     resultElement.className = 'bg-success';
-                     resultElement.innerHTML = 'Your review was POSITIVE!';
-                 }
+                 var resultElement = document.getElementById('sentiment');
+                 alert(resultElement);
              }
+             xhr.setRequestHeader("Cache-Control", "no-cache");
              xhr.open (oFormElement.method, oFormElement.action, true);
-             var review = document.getElementById('review');
-             xhr.send (review.value);
+             var review = document.getElementById('inputTranscript');
+             var params = {"inputTranscript":review.value}
+
+
+             xhr.send(JSON.stringify(params));
              return false;
          }
         </script>
@@ -37,11 +36,11 @@
             <h1>Enter the name of object - analyze sentiment based tweets about the object!</h1>
             <p>Enter a business, product, sports team, university, etc.</p>
             <form method="POST"
-                  action="**REPLACE WITH PUBLIC API URL**"
-                  onsubmit="return submitForm(this);" >                     <!-- HERE IS WHERE YOU NEED TO ENTER THE API URL -->
+                  action="https://qqkbhu58nl.execute-api.ca-central-1.amazonaws.com/beta"
+                  onsubmit="return submitForm(this);" >  <!-- HERE IS WHERE YOU NEED TO ENTER THE API URL -->
                 <div class="form-group">
-                    <label for="review">Object:</label>
-                    <textarea class="form-control"  rows="5" id="review">e.g. iPhone 11</textarea>
+                    <label for="inputTranscript">Object:</label>
+                    <textarea class="form-control"  rows="5" id="inputTranscript">e.g. iPhone 11</textarea>
                 </div>
                 <button type="submit" class="btn btn-default">Submit</button>
             </form>
