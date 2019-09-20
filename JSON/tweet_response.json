@@ -1,4 +1,4 @@
-{
+[{
     "Sentiment": {
         "Sentiment": "NEUTRAL",
         "SentimentScore": {
@@ -8,4 +8,49 @@
             "Mixed": 0.017357785254716873
         }
     }
+},
+{
+    "Sentiment": {
+        "Sentiment": "POSITIVE",
+        "SentimentScore": {
+            "Positive": 0.9825153350830078,
+            "Negative": 0.000814224302303046,
+            "Neutral": 0.010469438508152962,
+            "Mixed": 0.0062009855173528194
+        }
+    }
+},
+{
+    "Sentiment": {
+        "Sentiment": "NEGATIVE",
+        "SentimentScore": {
+            "Positive": 0.00007778477447573096,
+            "Negative": 0.9880623817443848,
+            "Neutral": 0.004348826128989458,
+            "Mixed": 0.007511156611144543
+        }
+    }
+},
+{
+    "Sentiment": {
+        "Sentiment": "NEGATIVE",
+        "SentimentScore": {
+            "Positive": 0.05964776501059532,
+            "Negative": 0.7867834568023682,
+            "Neutral": 0.13516771793365479,
+            "Mixed": 0.018401067703962326
+        }
+    }
+},
+{
+    "Sentiment": {
+        "Sentiment": "POSITIVE",
+        "SentimentScore": {
+            "Positive": 0.9580831527709961,
+            "Negative": 0.008991328068077564,
+            "Neutral": 0.026618368923664093,
+            "Mixed": 0.006307198200374842
+        }
+    }
 }
+]
